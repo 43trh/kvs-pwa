@@ -64,10 +64,14 @@ The outcome is *entirely random* can we still make money in a stable way?
 \mathbb{E}[\text{Trader P\&L}] < 0 \implies \text{Accumulate Negative Edge}
  $$
 
+# %% [markdown]
+# imports
 # %% [python]
 import numpy as np
 import plotly.graph_objs as go
 from plotly.subplots import make_subplots
+# %% [markdown]
+# running the simulation
 # %% [python]
 # ---------------------------------------------
 ### CONFIGURATION LEVER ###
@@ -143,8 +147,9 @@ def simulate_edge_multiple(N_paths, n_steps, hit_rate, ev_per_trade, vol):
 
 # Run the selected simulation
 time_steps, pl_paths = simulate_edge_multiple(N_PATHS, n_steps, hit_rate, EV_PER_TRADE, VOLATILITY)
-
-
+# %% [markdown]
+# plotting the simulations and the animation
+# %% [python]
 # --- STYLING & COLOR CHOICES ---
 AVG_LINE_COLOR = '#6AAED6'  
 LINE_WIDTH_INDIVIDUAL = 2   
@@ -2814,27 +2819,6 @@ In reality, if we then hedge effectively we will accumulate that theoretical spr
 - Unlike the dice market, where realizations occur instantly, we will have to hedge throughout the life of our position to collect the spread
 - Theoretically, continuous hedging with no transaction costs result in the simulated price of our contract so our position would be net zero if we transacted at mid but we transact at the bid or ask/offer giving us an edge to accumulate
 - Therefore, since markets are not frictionless, the efficacy of our hedge dictates how effectively we collect our spread and serve the business function of a market-maker
-
-**Future Topics**
-
-Technical Videos and Other Discussions
-
-- Quant Roadmap
-- Projects that Made me a Quant
-- Advanced Markov Chains (Absorbing States, Communication Classes, Ergodicity and Stationary Distributions, . . .)
-- Non-Markovian Models (fractional Brownian motion, Volterra Process)
-- Deriving the Black-Scholes Equation: PDE, Analytical/Numerical Solutions
-- Kalman Filters and Non-Stationary (A Big Problem in Quant Modeling)
-- Risk-Neutral Measures (Complete vs Incomplete Markets)
-- Reinforcement Learning for Delta Hedging
-- Approximating Pricing Functionals using Neural Networks
-- Rough Path Theorey, Applications of Path Signatures
-
-[Ideas for Interactive Brokers Apps and Tutorials](https://www.interactivebrokers.com/mkt/?src=quantguildY&url=%2Fen%2Fwhyib%2Foverview.php)
-
-- Live Neural Network Stochastic Volatility Model Calibration
-- Live Kalman Filter Model with Regime Dynamics (MCs/HMMs) 
-- Automated Delta-Neutral Trading System
 # %% [markdown]
 ---
 # %% [markdown]
